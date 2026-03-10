@@ -5970,6 +5970,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3708881744121257859, guid: eb5d52861eeceae4a8a1a05b0829a4cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 360604678}
+    - targetCorrespondingSourceObject: {fileID: 3708881744121257859, guid: eb5d52861eeceae4a8a1a05b0829a4cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 360604681}
+    - targetCorrespondingSourceObject: {fileID: 3708881744121257859, guid: eb5d52861eeceae4a8a1a05b0829a4cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 360604684}
   m_SourcePrefab: {fileID: 100100000, guid: eb5d52861eeceae4a8a1a05b0829a4cc, type: 3}
 --- !u!1 &360604676 stripped
 GameObject:
@@ -6061,7 +6067,19 @@ MonoBehaviour:
     m_ActionId: 27c5f898-bc57-4ee1-8800-db469aca5fe3
     m_ActionName: 'Player/Crouch[/Keyboard/c]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 360604680}
+        m_TargetAssemblyTypeName: Apps.Scripts.PlayerController, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f1ba0d36-48eb-4cd5-b651-1c94a6531f70
     m_ActionName: 'Player/Jump[/Keyboard/space]'
   - m_PersistentCalls:
@@ -6133,7 +6151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f3c35243b54fa98a4033e394fb11d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0
+  movementSpeed: 3.3
 --- !u!114 &360604680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6146,6 +6164,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6782952f26687684e9086c7a146014fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &360604681
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360604676}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e21dd38039f0074181ea4cc95e19678, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &360604684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360604676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc199ddc9e84791bed70aa4f5a853b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpPower: 10
 --- !u!1001 &365586113
 PrefabInstance:
   m_ObjectHideFlags: 0
