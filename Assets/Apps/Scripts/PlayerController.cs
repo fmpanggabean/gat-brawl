@@ -8,11 +8,13 @@ namespace Apps.Scripts
         // attributes
         private MovementAction _movementAction;
         private JumpAction _jumpAction;
+        private AttackAction _attackAction;
 
         private void Awake()
         {
             _movementAction = GetComponent<MovementAction>();
             _jumpAction = GetComponent<JumpAction>();
+            _attackAction = GetComponent<AttackAction>();
         }
 
         public void OnMove(InputAction.CallbackContext ctx)
@@ -33,12 +35,27 @@ namespace Apps.Scripts
         {
             if (_jumpAction is null)
             {
-            Debug.LogWarning("Component JumpAction is not attached to the object", this);
+                Debug.LogWarning("Component JumpAction is not attached to the object", this);
+                return;
             }
 
             if (ctx.performed)
             {
                 _jumpAction.Execute(20);
+            }
+        }
+
+        public void OnAttack(InputAction.CallbackContext ctx)
+        {
+            if (_attackAction is null)
+            {
+                Debug.LogWarning("Component AttackAction is not attached to the object", this);
+                return;
+            }
+
+            if (ctx.performed)
+            {
+                _attackAction.Execute(5);
             }
         }
     }
