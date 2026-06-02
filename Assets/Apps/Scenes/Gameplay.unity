@@ -24563,8 +24563,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30297a34bba99f4a8db38261eb86ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmSlider: {fileID: 1296334806}
-  sfxSlider: {fileID: 994658658}
+  _canvas: {fileID: 1386992941}
+  _bgmSlider: {fileID: 1296334806}
+  _sfxSlider: {fileID: 994658658}
+  _resumeButton: {fileID: 1717184181}
 --- !u!1001 &1394654985
 PrefabInstance:
   m_ObjectHideFlags: 0

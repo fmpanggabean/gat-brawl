@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         SpawnPlayer();
-        SpawnPlayer();
+        // SpawnPlayer();
     }
 
     public void SpawnPlayer()
