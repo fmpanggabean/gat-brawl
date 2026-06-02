@@ -4,25 +4,41 @@ using UnityEngine.UI;
 
 public class PauseMenu_UI : MonoBehaviour
 {
-    [SerializeField] private Slider bgmSlider;
-    [SerializeField] private Slider sfxSlider;
+    [SerializeField] private Canvas _canvas;
+    
+    [SerializeField] private Slider _bgmSlider;
+    [SerializeField] private Slider _sfxSlider;
+    [SerializeField] private Button _resumeButton;
 
     private AudioController _audioController;
     
     private void Awake()
     {
         _audioController = FindFirstObjectByType<AudioController>();
+        _canvas = GetComponent<Canvas>();
         
         //set event listener
-        bgmSlider.onValueChanged.AddListener(delegate { _audioController.SetBGM(bgmSlider.value); });
-        sfxSlider.onValueChanged.AddListener(delegate { _audioController.SetSFX(sfxSlider.value); });
+        _bgmSlider.onValueChanged.AddListener(delegate { _audioController.SetBGM(_bgmSlider.value); });
+        _sfxSlider.onValueChanged.AddListener(delegate { _audioController.SetSFX(_sfxSlider.value); });
 
+        _resumeButton.onClick.AddListener(Hide);
+        
         _audioController.OnSoundSettingLoaded += SetSliderValue;
     }
 
     private void SetSliderValue()
     {
-        bgmSlider.value = PlayerPrefs.GetFloat("bgm");
-        sfxSlider.value = PlayerPrefs.GetFloat("sfx");
+        _bgmSlider.value = PlayerPrefs.GetFloat("bgm");
+        _sfxSlider.value = PlayerPrefs.GetFloat("sfx");
+    }
+
+    public void Show()
+    {
+        _canvas.enabled = true;
+    }
+
+    public void Hide()
+    {
+        _canvas.enabled = false;
     }
 }
